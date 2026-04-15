@@ -1,0 +1,26 @@
+import random
+choices=["rock", "paper", "scissors"]
+win = 0
+lose = 0
+Tie = 0
+while True:
+    user= input("rock/paper/scissors:").lower()
+    comp = random.choice(choices)
+    print("computer:", comp)
+    if user==comp:
+        print("Tie") 
+        Tie= Tie+1
+    elif(user=="rock" and comp=="scissors") or (user=="paper" and comp=="rock") or (user=="scissors" and comp=="paper"): 
+        print("you win")
+        win= win+1
+    else:
+        print("you lose")
+        lose= lose+1
+    print("score-> win:", win , "lose:", lose , "Tie:", Tie)    
+    if input("Again ? (y/n):").lower() !='y':
+        break
+    print("\n final score:")
+    print("win:",win)
+    print("lose:",lose)
+    print("Tie",Tie)
+                
